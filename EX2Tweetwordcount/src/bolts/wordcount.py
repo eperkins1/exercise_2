@@ -15,7 +15,7 @@ class WordCounter(Bolt):
 
     def process(self, tup):
         word = tup.values[0]
-
+        w = word
         # Increment the local count
         self.counts[word] += 1
         self.emit([word, self.counts[word]])
@@ -29,8 +29,9 @@ class WordCounter(Bolt):
         cur = self.conn.cursor()
         #Create new entry if word is first of its kind
         if self.counts[word] == 1:
-            cur.execute("INSERT INTO Tweetwordcount (word,count) \
-                VALUES (%s, 1)" % (word));
+            cur.execute("INSERT INTO Tweetwordcount(word,count) \
+                VALUES (%s, 1)", % (w));
+            # cur.execute("INSERT INTO Tweetwordcount(%s,%d)" % (word, 1));
         #Update count if word has already occurred
         else:
             cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (self.counts[word], word))
