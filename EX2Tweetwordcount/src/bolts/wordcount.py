@@ -1,9 +1,9 @@
 from __future__ import absolute_import, print_function, unicode_literals
-import psycopg2
+#import psycopg2
 from collections import Counter
 from streamparse.bolt import Bolt
 #Figure out password
-conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
+#conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 
 
 class WordCounter(Bolt):
