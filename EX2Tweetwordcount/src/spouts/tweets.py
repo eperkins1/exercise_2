@@ -71,7 +71,7 @@ class Tweets(Spout):
 
     def next_tuple(self):
         try:
-            tweet = self.queue().get(timeout = 0.5) 
+            tweet = self.queue().get(timeout = None) 
             if tweet:
                 self.queue().task_done()
                 self.emit([tweet])
