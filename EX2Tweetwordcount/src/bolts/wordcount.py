@@ -30,7 +30,7 @@ class WordCounter(Bolt):
         #Create new entry if word is first of its kind
         if self.counts[word] == 1:
             cur.execute("INSERT INTO Tweetwordcount (word,count) \
-                    VALUES (word, 1)");
+                VALUES (%s, 1)", (word));
         #Update count if word has already occurred
         else:
             cur.execute("UPDATE Tweetwordcount SET count=%s WHERE word=%s", (self.counts[word], word))
