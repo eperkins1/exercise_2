@@ -11,11 +11,16 @@ class WordCounter(Bolt):
     def initialize(self, conf, ctx):
         self.counts = Counter()
         self.conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
+        cur = self.conn.cursor()
+        cur.execute("DROP TABLE Tweetwordcount;")
+        cur.execute('''CREATE TABLE Tweetwordcount
+            (word TEXT PRIMARY KEY     NOT NULL,
+            count INT     NOT NULL);''')
+        self.conn.commit()
        
 
     def process(self, tup):
         word = tup.values[0]
-        w = word
         # Increment the local count
         self.counts[word] += 1
         self.emit([word, self.counts[word]])
@@ -30,7 +35,7 @@ class WordCounter(Bolt):
         #Create new entry if word is first of its kind
         if self.counts[word] == 1:
             cur.execute("INSERT INTO Tweetwordcount(word,count) \
-                VALUES (%s, %s)", (w, 1));
+                VALUES (%s, %s)", (word, 1));
             # cur.execute("INSERT INTO Tweetwordcount(%s,%d)" % (word, 1));
         #Update count if word has already occurred
         else:
