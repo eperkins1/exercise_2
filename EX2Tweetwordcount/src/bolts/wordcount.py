@@ -12,7 +12,7 @@ class WordCounter(Bolt):
         self.counts = Counter()
         self.conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
         cur = self.conn.cursor()
-        cur.execute("DROP TABLE Tweetwordcount;")
+        cur.execute("DROP TABLE IF EXISTS Tweetwordcount;")
         cur.execute('''CREATE TABLE Tweetwordcount
             (word TEXT PRIMARY KEY     NOT NULL,
             count INT     NOT NULL);''')
