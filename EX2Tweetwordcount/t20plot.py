@@ -16,7 +16,7 @@ cur.execute("SELECT word, count from Tweetwordcount ORDER BY count DESC LIMIT 20
 records = cur.fetchall()
 for rec in records:
 	words.append(rec[0])
-	counts.append(rec[1])
+	counts.append(int(rec[1]))
 
 plt.plot(words, counts)
 
