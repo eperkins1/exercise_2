@@ -15,7 +15,7 @@ if sys.argv[1] is None:
 	   print ("count = ", rec[1], "\n")
 else:
     #Case where we print number of occurrences of sys.argv[1]
-    cur.execute("SELECT word, count from Tweetwordcount WHERE word == \'%s\'", sys.argv[1])
+    cur.execute("SELECT word, count from Tweetwordcount WHERE word == \'%s\'", (sys.argv[1]))
     records = cur.fetchall()
     for rec in records:
        print ("Total number of occurrences of \"%s\": %s", (rec[0], rec[1]), "\n")
