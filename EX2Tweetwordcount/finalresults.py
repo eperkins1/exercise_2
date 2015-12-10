@@ -6,7 +6,7 @@ import psycopg2
 conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
 cur = conn.cursor()
 
-if sys.argv[1] is None:
+if len(sys.argv) <= 1:
 	#Case where we print out all the words in the stream and their total count of occurrences, sorted alphabetically in an ascending order, one word per line                                           
     cur.execute("SELECT word, count from Tweetwordcount ORDER BY word ASC")
     records = cur.fetchall()
