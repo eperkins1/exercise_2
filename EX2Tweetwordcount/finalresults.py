@@ -10,7 +10,7 @@ if sys.argv[1] is None:
 	#Case where we print out all the words in the stream and their total count of occurrences, sorted alphabetically in an ascending order, one word per line                                           
     cur.execute("SELECT word, count from Tweetwordcount ORDER BY word ASC")
     records = cur.fetchall()
-	for rec in records:
+    for rec in records:
 	   print ("word = ", rec[0])
 	   print ("count = ", rec[1], "\n")
 else:
@@ -18,6 +18,6 @@ else:
     cur.execute("SELECT word, count from Tweetwordcount WHERE word == \'%s\'", sys.argv[1])
     records = cur.fetchall()
     for rec in records:
-    	print ("Total number of occurrences of \"%s\": %s", (rec[0], rec[1]), "\n")
+       print ("Total number of occurrences of \"%s\": %s", (rec[0], rec[1]), "\n")
 conn.commit()
 conn.close()
