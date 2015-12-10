@@ -37,7 +37,7 @@ plt.xticks(wordnums, words)
 # ax.bar(x+0.2, k,width=0.2)
 # ax.xaxis_date()
 
-plt.show()
+plt.savefig('foo.png')
 
 conn.commit()
 conn.close()
