@@ -18,8 +18,9 @@ for rec in records:
 	words.append(rec[0])
 	counts.append(int(rec[1]))
 
-plt.bar([1:20], counts, align='center')
-plt.xticks(words, LABELS)
+wordnums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+plt.bar(wordnums, counts, align='center')
+plt.xticks(wordnums, LABELS)
 
 # x = [datetime.datetime(2011, 1, 4, 0, 0),
 #      datetime.datetime(2011, 1, 5, 0, 0),
