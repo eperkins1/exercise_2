@@ -11,8 +11,7 @@ if len(sys.argv) <= 1:
     cur.execute("SELECT word, count from Tweetwordcount ORDER BY word ASC")
     records = cur.fetchall()
     for rec in records:
-	   print ("word = ", rec[0])
-	   print ("count = ", rec[1], "\n")
+	   print ("(",rec[0],", ", rec[1],")\n")   
 else:
     w = str(sys.argv[1])
     #Case where we print number of occurrences of sys.argv[1]
