@@ -19,6 +19,6 @@ else:
     cur.execute("SELECT word, count from Tweetwordcount WHERE word = \'%s\'" % (w))
     records = cur.fetchall()
     for rec in records:
-       print ("Total number of occurrences of \"%s\": %s", (rec[0], rec[1]))
+       print ("Total number of occurrences of \"" + rec[0] + "\": " + rec[1] + "\n")
 conn.commit()
 conn.close()
