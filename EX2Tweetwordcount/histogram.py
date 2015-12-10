@@ -17,7 +17,7 @@ else:
         cur.execute("SELECT word, count from Tweetwordcount WHERE count >= %s AND count <= %s" % (ks[0], ks[1]))
         records = cur.fetchall()
         for rec in records:
-            print (rec[0] + ": " + str(rec[1]) + "\n")
+            print (rec[0] + ": " + str(rec[1]))
 
     # w = str(sys.argv[1])
     # #Case where we print number of occurrences of sys.argv[1]
