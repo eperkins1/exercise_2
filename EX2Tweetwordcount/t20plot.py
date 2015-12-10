@@ -18,17 +18,17 @@ for rec in records:
 	words.append(rec[0])
 	counts.append(int(rec[1]))
 
-wordnums = []
-wordlens = []
-for word in words:
-	wordlens.append(len(word))
-interval = max(wordlens)
-curlen = 0
-for word in words:
-	curlen += interval
-	wordnums.append(curlen)
+wordnums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#wordlens = []
+#for word in words:
+#	wordlens.append(len(word))
+#interval = max(wordlens)
+#curlen = 0
+#for word in words:
+#	curlen += interval
+#	wordnums.append(curlen)
 plt.bar(wordnums, counts, align='center')
-plt.xticks(wordnums, words)
+plt.xticks(np.arange(20), words)
 
 # x = [datetime.datetime(2011, 1, 4, 0, 0),
 #      datetime.datetime(2011, 1, 5, 0, 0),
