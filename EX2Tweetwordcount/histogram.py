@@ -10,7 +10,7 @@ if len(sys.argv) != 2:
 	#Case where we print out all the words in the stream and their total count of occurrences, sorted alphabetically in an ascending order, one word per line                                           
     print ("Please enter two numbers separated by only a comma as single argument, where the first is less than or equal to the second")
 else:
-    ks = sys.argv.split(',')
+    ks = sys.argv[1]split(',')
     if len(ks) != 2 or not (isinstance(ks[0], (int)) and isinstance(ks[1], (int))) or ks[0] > ks[1]:
         print("Please enter two numbers separated by only a comma as a single argument, where the first is less than or equal to the second")
     else:
