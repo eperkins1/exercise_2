@@ -18,7 +18,8 @@ for rec in records:
 	words.append(rec[0])
 	counts.append(int(rec[1]))
 
-plt.plot(words, counts)
+plt.bar([1:20], counts, align='center')
+plt.xticks(words, LABELS)
 
 # x = [datetime.datetime(2011, 1, 4, 0, 0),
 #      datetime.datetime(2011, 1, 5, 0, 0),
