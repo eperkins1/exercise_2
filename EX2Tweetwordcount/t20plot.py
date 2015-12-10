@@ -19,9 +19,13 @@ for rec in records:
 	counts.append(int(rec[1]))
 
 wordnums = []
+wordlens = []
+for word in words:
+	wordlens.append(len(word))
+interval = max(wordlens)
 curlen = 0
 for word in words:
-	curlen += len(word)
+	curlen += interval
 	wordnums.append(curlen)
 plt.bar(wordnums, counts, align='center')
 plt.xticks(wordnums, words)
