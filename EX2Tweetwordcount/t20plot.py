@@ -22,15 +22,12 @@ for rec in records:
 # plt.bar(wordnums, counts, align='center')
 # plt.xticks(np.arange(20), words)
 
-# Set up the axes and figure
-fig, ax = plt.subplots()
-
 # Make a bar plot, ignoring the date values
-ax.bar(np.arange(20), counts, align='center', width=1.0)
-ax.xticks(np.arange(20), words)
+plt.bar(np.arange(20), counts, align='center', width=1.0)
+plt.xticks(np.arange(20), words)
 
 # Force matplotlib to place a tick at every bar and label them with the date
-ax.tick_params(axis='x', pad=8) #Same as plt.xticks
+plt.tick_params(axis='x', pad=8) #Same as plt.xticks
 
 plt.savefig('foo.png')
 
