@@ -28,7 +28,7 @@ plt.xticks(np.arange(20), words)
 
 # Force matplotlib to place a tick at every bar and label them with the date
 plt.tick_params(axis='x', pad=30) #Same as plt.xticks
-
+plt.setp(axis='x', rotation=70)
 plt.savefig('foo.png')
 
 conn.commit()
