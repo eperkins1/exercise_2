@@ -29,7 +29,7 @@ fig, ax = plt.subplots()
 ax.bar(np.arange(20), counts, align='center', width=1.0)
 
 # Force matplotlib to place a tick at every bar and label them with the date
-ax.set(xticks=np.arange(20), xticklabels=datelabels) #Same as plt.xticks
+ax.tick_params(axis='x', pad=8) #Same as plt.xticks
 
 plt.savefig('foo.png')
 
