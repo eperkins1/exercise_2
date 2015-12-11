@@ -18,17 +18,10 @@ for rec in records:
 	words.append(rec[0])
 	counts.append(int(rec[1]))
 
-
-# plt.bar(wordnums, counts, align='center')
-# plt.xticks(np.arange(20), words)
-
-# Make a bar plot, ignoring the date values
 plt.bar(np.arange(20), counts, align='center', width=1.0)
 plt.xticks(np.arange(20), words, rotation=70)
-# Force matplotlib to place a tick at every bar and label them with the date
 plt.tick_params(axis='x', pad=8) #Same as plt.xticks
-#plt.setp(axis='x', rotation=70)
-plt.savefig('foo.png')
+plt.savefig('Plot.png')
 
 conn.commit()
 conn.close()
