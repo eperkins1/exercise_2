@@ -24,8 +24,7 @@ for rec in records:
 
 # Make a bar plot, ignoring the date values
 plt.bar(np.arange(20), counts, align='center', width=1.0)
-#plt.xticks(np.arange(20), words)
-words = plt.xticks()
+plt.xticks(np.arange(20), words, rotation=70)
 # Force matplotlib to place a tick at every bar and label them with the date
 plt.tick_params(axis='x', pad=8) #Same as plt.xticks
 #plt.setp(axis='x', rotation=70)
