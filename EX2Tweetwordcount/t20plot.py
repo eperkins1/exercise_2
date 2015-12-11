@@ -18,32 +18,18 @@ for rec in records:
 	words.append(rec[0])
 	counts.append(int(rec[1]))
 
-wordnums = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
-#wordlens = []
-#for word in words:
-#	wordlens.append(len(word))
-#interval = max(wordlens)
-#curlen = 0
-#for word in words:
-#	curlen += interval
-#	wordnums.append(curlen)
-plt.bar(wordnums, counts, align='center')
-plt.xticks(np.arange(20), words)
 
-# x = [datetime.datetime(2011, 1, 4, 0, 0),
-#      datetime.datetime(2011, 1, 5, 0, 0),
-#      datetime.datetime(2011, 1, 6, 0, 0)]
-# x = date2num(x)
+# plt.bar(wordnums, counts, align='center')
+# plt.xticks(np.arange(20), words)
 
-# y = [4, 9, 2]
-# z=[1,2,3]
-# k=[11,12,13]
+# Set up the axes and figure
+fig, ax = plt.subplots()
 
-# ax = plt.subplot(111)
-# ax.bar(x-0.2, y,width=0.2)
-# ax.bar(x, z,width=0.2)
-# ax.bar(x+0.2, k,width=0.2)
-# ax.xaxis_date()
+# Make a bar plot, ignoring the date values
+ax.bar(np.arange(20), counts, align='center', width=1.0)
+
+# Force matplotlib to place a tick at every bar and label them with the date
+ax.set(xticks=np.arange(20), xticklabels=datelabels) #Same as plt.xticks
 
 plt.savefig('foo.png')
 
