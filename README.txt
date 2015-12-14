@@ -18,14 +18,16 @@ Step-by-Step Setup Instructions (Run all instructions as root where applicable)
 		CREATE DATABASE Tcount;
 		\q
 10) Run stream:
+	cd into exercise_2 repo
 	cd into EX2Tweetwordcount folder, and run “sparse run”
 	Keep it running for as long as you’d like to build up the table
 11) Run either of the python files, with option argument for finalresults.py:
 	histogram.py
 	finalresults.py
 12) To create the Plot.png, import matplotlib and numpy by running the following commands, in the EX2Tweetwordcount directory:
-	pip install numpy
 	mkdir /usr/local/lib/temph/
 	mv /usr/local/lib/libpython2.7.a /usr/local/lib/temph/
+	pip install numpy
 	pip install matplotlib
 	mv /usr/local/lib/temph/libpython2.7.a /usr/local/lib/
+	python t20plot.py
