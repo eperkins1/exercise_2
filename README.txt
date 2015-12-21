@@ -1,3 +1,4 @@
+#
 Step-by-Step Setup Instructions (Run all instructions as root where applicable)
 
 1) Create instance with only 10GB root using ucbw205_complete_plus_postgres_PY2.7
